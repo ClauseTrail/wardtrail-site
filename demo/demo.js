@@ -5,7 +5,7 @@
   const real = window.fetch.bind(window);
   const ready = real("data.json").then((r) => r.json());
   const json = (data, status) => new Response(JSON.stringify(data), { status: status || 200, headers: { "content-type": "application/json" } });
-  const READ_ONLY = "This is a read-only demo with fictional data. Install the platform to add or change records.";
+  const READ_ONLY = "This is a read-only demo with fictional data. Install WardTrail to add or change records: see How to install at the bottom left.";
 
   function query(D, entity, q) {
     const e = D.meta.entities[entity];
@@ -93,7 +93,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     const bar = document.createElement("div");
     bar.className = "demo-bar";
-    bar.innerHTML = 'Read-only demo with fictional data. <a href="../">Back to the site</a>';
+    bar.innerHTML = 'Read-only demo with fictional data. <a href="../#install">How to install</a> · <a href="../">Back to the site</a>';
     document.body.append(bar);
   });
 })();
